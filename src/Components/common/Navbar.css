@@ -1,0 +1,160 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    width: 335px;
+    height: 100vh;
+    border: 1px solid gray;
+    transition: width 0.3s ease;
+}
+
+.navbar.change{
+    width: 100px;
+    border-top: none;
+    border-bottom: none;
+}
+
+.navbar-containers{
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease;
+    justify-content: space-between;
+}
+
+.navlinks{
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    padding: 5px;
+    gap: 20px;
+    height: 70%;
+    transition: width 0.3s ease;
+}
+
+.navlinks a{
+    text-decoration: none;
+    color: black;
+    width: 300px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    padding: 10px;
+    transition: 0.3s ease;
+}
+
+.navlinks a:hover{
+    background-color: rgba(128, 128, 128, 0.226);
+}
+
+.navlinks a:focus{
+    background-color: rgba(128, 128, 128, 0.226);
+    color: black;
+    font-weight: 600;
+}
+
+/* .navlinks .active span{
+    color: black;
+    font-weight: 600;
+} */
+
+
+.profile-pic{
+    width: 22px;
+    height: 22px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 50%;
+}
+
+.more-options{
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    padding: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border-radius: 12px;
+}
+
+.more-options:hover{
+    background-color: rgba(128, 128, 128, 0.226);
+}
+
+.logo{
+    width: 137px;
+    height: 67px;
+    transition: width 0.3s ease;
+    margin-top: 28px;
+    margin-left: 10px;
+    margin-bottom: 5px 
+}
+
+.logo.change{
+    margin-top: 28px;
+    margin-left: 0px;
+    margin-bottom: 5px;
+    width: 93px;
+    height: 68px;
+}
+
+.more-options{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.more-options .breadcrumb{
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    height: 40px;
+}
+
+.more-options .line{
+    width: 100%;
+    margin-top: 5px;
+    height: 4px;
+    border-radius: 30px;
+    background-color: black;
+}
+
+.options-container{
+    display: flex;
+    flex-direction: column;
+    width: 278px;
+    position: absolute;
+    left: 1%;
+    top: 77%;
+    border: 1px solid rgb(128, 128, 128);
+    border-radius: 12px;
+    background-color: white;
+    color: black;
+    align-items: center;
+    cursor: pointer;
+    z-index: 11;
+}
+
+.option-item{
+    width: 96%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 12px;
+}
+
+.option-item:hover{
+    background-color: rgba(128, 128, 128, 0.226);
+}
+
+.option-item .settings-icon{
+    margin-left: 15px;
+}
+
+.option-item .settings-text{
+    margin-left: 5px;
+}
+
+.option-item .logout-text{
+    margin-left: 20px;
+}
+

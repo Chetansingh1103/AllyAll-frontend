@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+}
+
+.app{
+    display: flex;
+}
+
+.logo{
+    width: 200px;
+    height: 100px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.signup-page,.login-page{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.signup-page form, .login-page form{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: .5px solid rgba(0, 0, 0, 0.247);
+    gap: 10px;
+}
+
+
+
+.signup-page form h3{
+    font-size: 16px;
+    font-weight: 600;
+    width: 70%;
+    text-align: center;
+    color: rgba(7, 7, 7, 0.336);
+    margin-bottom: 20px;
+}
+
+.input-group{
+    width: 70%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.signup-page form .input-group input, .login-page form .input-group input{
+    width: 100%;
+    position: relative;
+    height: 40px;
+    border: 2px solid #00000056;
+    outline: none;
+    padding: 0 10px;
+}
+
+.signup-page form .input-group input::placeholder , .login-page form .input-group input::placeholder{
+    color: rgba(7, 7, 7, 0.486);
+}
+
+.signup-page form .input-group input:focus, .login-page form .input-group input:focus{
+    border: 2px solid #00000091;
+}
+
+.input-group .icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+}
+
+.input-group .icon i {
+    color: #28a745; /* Change color as needed */
+}
+
+
+/* .input-group input:focus + .icon {
+  opacity: 1; 
+} */
+
+.terms-policies{
+    width: 70%;
+    font-size: 14px;
+    text-align: center;
+    color: rgba(7, 7, 7, 0.486);
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.terms-policies a{
+    color: #28a745;
+    text-decoration: none;
+}
+
+.terms-policies a:hover{
+    text-decoration: underline;
+}
+
+form button{
+    width: 72%;
+    height: 40px;
+    border: 1px solid #00000000;
+    outline: none;
+    padding: 0 10px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #69c3ff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-bottom: 50px;
+}
+
+.resendOtp:hover{
+    color: #007ff5 !important;
+}
+
+.resendOtp:focus{
+    color: rgba(7, 7, 7, 0.336) !important;
+}
+
+.Otpnext{
+    margin-bottom: 15px;
+    background-color: rgb(36, 168, 255);
+}
+
+.Otpnext:hover{
+    background-color: #0072f5;
+}
+

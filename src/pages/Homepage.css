@@ -1,0 +1,135 @@
+.homepage{
+    display: flex;
+    position: fixed;
+    left: 20%;
+    height: 100vh;
+    width: 80%;
+    justify-content: space-evenly;
+    overflow-y: scroll;
+}
+
+.post-container{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.homepage::-webkit-scrollbar {
+    display: none;
+}
+
+
+.post-card{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    border-top: 1px solid rgba(128, 128, 128, 0.658);
+}
+
+.post-card-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.post-profile-pic{
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 50%;
+}
+
+.post-card-header-username{
+    font-size: 16px;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.post-card-body{
+    display: flex;
+    flex-direction: column;
+}
+
+.post-img{
+    width: 468px;
+    height: 468px;
+    object-fit: contain;
+    background: black;
+}
+
+.post-icons{
+    display: flex;
+    flex-direction: row; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.post-comment-icon{
+    margin-left: 10px;
+}
+
+.post-text-body{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.post-card-body-text{
+    display: flex;
+}
+
+.post-card-body-username{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.post-card-body-comments{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.post-like-icon{
+    transition: 0.5s ease;
+}
+
+.bx-heart:hover{
+    color: gray;
+}
+
+.bx-comment:hover{
+    color: gray;
+}
+
+.like-count{
+    margin-bottom: 10px;
+}
+
+.created-time{
+    margin-left: 7px;
+    color: gray;
+    display: flex;
+    flex-direction: row;
+}
+
+.dot{
+    display: flex;
+    flex-direction: column;
+    width: 3px;
+    height: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 6px;
+    color: gray;
+}
+
+
+
+
+

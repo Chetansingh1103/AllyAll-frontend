@@ -1,0 +1,105 @@
+.search-container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    border: 1px solid rgb(128, 128, 128);
+    border-left: none;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: white;
+    margin-left: -10px;
+    top: 0;
+    border-top: none;
+    border-bottom: none;
+    transform: translateX(25%);
+    height: 100vh;
+    z-index: 10;
+    opacity: 0;        /* Start with opacity 0 */
+    width: 0;         /* Start with height 0 */
+    overflow: hidden;  /* Hide overflowing content */
+    transition: opacity 0.5s ease, width 0.5s ease;
+}
+
+.search-container.visible{
+    opacity: 1;
+    width: 370px;
+}
+
+.search-container.hidden {
+    opacity: 0;
+    width: 0;
+}
+
+.search{
+    display: flex;
+    flex-direction: column;
+    margin-top: 45px;
+}
+
+.search h2{
+    margin-left: 10px;
+}
+
+.search input{
+    width: 350px;
+    margin-top: 50px;
+    height: 45px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid rgb(128, 128, 128);
+}
+
+.recent{
+    margin-top: 40px;
+    border-top: 1px solid gray;
+}
+
+.recent h4{
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.search-list-container{
+    width: 350px;
+    height: 100vw;
+    z-index: 100;
+    margin-top: 10px;
+    overflow-y: scroll;
+    cursor: pointer;
+}
+
+.search-list-container .searched-profile{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+}
+
+.search-list-container .searched-profile:hover{
+    background-color: rgba(128, 128, 128, 0.281);
+}
+
+.search-list-container .searched-profile .profile-pic{
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 50%;
+}
+
+.details h5{
+    margin-left: 15px;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.details p{
+    margin-left: 15px;
+    font-size: 12px;
+    color: gray;
+}
+
+
+
+
+

@@ -1,0 +1,122 @@
+.profile{
+    width: 935px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-bottom: 30px;
+    margin-bottom: 40px;
+}
+
+.profile-top-img{
+    width: 200px;
+    margin-left: 40px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profile-top-profile-photo{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+}
+
+.profile-top-details{
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    width: 400px;
+}
+
+.profile-top-details div{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.profile-top-details div span{
+    margin-right: 40px;
+}
+
+.profile-top-details-username{
+    font-size: 20px;
+}
+
+.profile-top-details div span button{
+    width: 90px;
+    height: 35px;
+    border: none;
+    border-radius: 8px;
+    margin-right: -20px;
+}
+
+.profile-top-details div span button:hover{
+    background-color: rgba(128, 128, 128, 0.219);
+}
+
+.follow-button{
+    color: white;
+    background-color: rgb(0, 149, 235);
+    cursor: pointer;
+}
+
+.follow-button:hover{
+    background-color: rgba(2, 99, 245, 0.836) !important;
+}
+
+.profile-top-details-bio{
+    font-size: 15px;
+}
+
+.profile-bottom{
+    border-top: 1px solid rgba(128, 128, 128, 0.363);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-posts{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.profile-top-details-settings{
+    margin-left: -20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.profile-top-details-followers,.profile-top-details-following{
+    cursor: pointer;
+}
+
+.profile-top-details-followers:active,.profile-top-details-following:active{
+    color: gray;
+}
+
+.profile-top-details-edit-profile{
+    cursor: pointer;
+}
+
+.profile-top-details-message{
+    cursor: pointer;
+}
+

@@ -1,0 +1,55 @@
+.settings-page{
+    height: 100vh;
+    overflow-y: scroll;
+    width: 300px;
+}
+
+.settings-page h3{
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.settings-container{
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    padding: 5px;
+    gap: 20px;
+    height: 70%;
+    transition: width 0.3s ease;
+}
+
+.settings-container a:focus{
+    background-color: rgba(128, 128, 128, 0.226);
+    color: black;
+    font-weight: 600;
+}
+
+
+.settings-container a{
+    text-decoration: none;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    padding: 10px;
+    transition: 0.3s ease;
+}
+
+.settings-option{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.settings-container a:hover{
+    background-color: rgba(128, 128, 128, 0.226);
+}
+
+.settings-container a:focus{
+    background-color: rgba(128, 128, 128, 0.226);
+}
+
+
+
