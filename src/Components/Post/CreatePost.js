@@ -4,6 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import "./CreatePost.css"
 import { createPost } from '../../redux/actions/postActions';
 
+const AWS_ACCESSKEYID = process.env.REACT_APP_AWS_ACCESSKEYID
+
+const AWS_SECRETKEYID = process.env.REACT_APP_AWS_SECRETKEYID
+
+const AWS_REGION = process.env.REACT_APP_AWS_REGION
+
+
 const CreatePost = ({show,setShow}) => {
 
     let [file,setFile] = useState("");
@@ -22,9 +29,9 @@ const CreatePost = ({show,setShow}) => {
     },[file])
 
     AWS.config.update({
-        accessKeyId: process.env.AWS_ACCESSKEYID,
-        secretAccessKey: process.env.AWS_SECRETKEYID,
-        region: process.env.AWS_REGION
+        accessKeyId: AWS_ACCESSKEYID,
+        secretAccessKey: AWS_SECRETKEYID,
+        region: AWS_REGION
     })
 
     function implementCreatePost(){
