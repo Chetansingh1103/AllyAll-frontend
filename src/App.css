@@ -46,7 +46,7 @@
     margin-bottom: 20px;
 }
 
-.input-group{
+.signup-page form .input-group, .login-page form .input-group{
     width: 70%;
     position: relative;
     display: flex;
@@ -139,3 +139,59 @@ form button{
     background-color: #0072f5;
 }
 
+@media screen and (max-width: 780px){
+
+    .app {
+        flex-direction: column-reverse;
+    }
+
+}
+
+
+@media screen and (max-width: 380px){
+
+    .signup-page form, .login-page form {
+        width: 275px;
+        border: none;
+        gap: 5px;
+    }
+
+    form button {
+        margin-bottom: -20px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .login-page form button {
+        margin-bottom: 20px;
+    }
+
+    .signup-page form .input-group input {
+        height: 35px;
+    }
+
+    .login-page form .input-group input {
+        height: 35px;
+        margin-bottom: 10px;
+    }
+
+
+    .signup-page form h3 {
+        font-size: 14px;
+    }
+
+    .signup-page form .logo, .login-page form .logo {
+        width: 110px;
+        height: 60px;
+        margin-top: 0px;
+        margin-left: 4px;
+        margin-bottom: 11px;
+    }
+
+    .terms-policies {
+        width: 68%;
+        font-size: 12px;
+        margin-top: 13px;
+        margin-bottom: 14px;
+    }
+}

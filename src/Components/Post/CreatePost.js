@@ -82,7 +82,7 @@ const CreatePost = ({show,setShow}) => {
                         rows={4}
                         cols={50}
                     />
-                    <button onClick={implementCreatePost}>Post</button>
+                    <button className='create-post-btn' onClick={implementCreatePost}>Post</button>
                 </div>
             </div>
             

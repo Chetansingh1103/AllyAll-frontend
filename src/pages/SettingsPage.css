@@ -2,6 +2,7 @@
     height: 100vh;
     overflow-y: scroll;
     width: 300px;
+    border: 1px solid gray;
 }
 
 .settings-page h3{
@@ -51,5 +52,18 @@
     background-color: rgba(128, 128, 128, 0.226);
 }
 
+
+@media screen and (max-width: 785px){
+
+    .settings-page{
+         width: 100vw;
+     }
+
+     .settings-container{
+        border-top: 1px solid gray;
+     }
+
+
+}
 
 

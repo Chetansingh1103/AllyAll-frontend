@@ -18,6 +18,24 @@ const Navbar = () => {
     const token = useSelector(state => state.auth.token)
     const loggedInUser = useSelector(state => state.auth.loggedInUser)
     const navigate = useNavigate();
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+    useEffect(() => {
+        const checkWindowSize = () => {
+          setIsSmallScreen(window.innerWidth < 1095);
+        };
+    
+        // Call the function to set initial state
+        checkWindowSize();
+    
+        // Add event listener for resizing
+        window.addEventListener('resize', checkWindowSize);
+    
+        // Clean up event listener
+        return () => {
+          window.removeEventListener('resize', checkWindowSize);
+        };
+      }, []);
 
     useEffect(() => {
 
@@ -103,23 +121,63 @@ const Navbar = () => {
         window.location.reload();
     }
 
-    function handleNotifications(){
+    // function handleNotifications(){
 
-    }
+    // }
 
 
     return (
-        <div className={`navbar ${change ? 'change':''}` } >
+        <div className={`navbar` } >
+         { isSmallScreen ? 
+            <div className='navbar-containers'>
+                <img className="logo change" src={require("../../images/favicon.png")} alt='logo'/>
+                <div className='navlinks'>
+                    <NavLink onClick={handleHome} to='/homepage'><box-icon type='solid' name='home'></box-icon> </NavLink>
+                    <NavLink onClick={handleSearchContainer}><span style={{display: "flex"}}><box-icon size="sm" name='search' ></box-icon></span></NavLink>
+                    {/* <NavLink onClick={handleExplore} to='/explore' >{change ?<box-icon name='compass' ></box-icon> : <span style={{display: "flex"}}><box-icon  name='compass' ></box-icon> <span style={{marginTop: "5px", marginLeft: "15px"}}>Explore</span></span>}</NavLink> */}
+                    {/* <NavLink onClick={handleMessages} to='/messages'>{change ?<box-icon name='message-rounded-detail' ></box-icon> : <span style={{display: "flex"}}><box-icon name='message-rounded-detail' ></box-icon> <span style={{marginTop: "5px", marginLeft: "15px"}}>Messages</span></span>}</NavLink> will be updated soon */}
+                    {/* <NavLink onClick={handleNotifications} to='/notifications'>{change ?<box-icon name='bell' ></box-icon> : <span style={{display: "flex"}}><box-icon name='bell' ></box-icon> <span style={{marginTop: "5px", marginLeft: "15px"}}>Notifications</span></span>}</NavLink> */}
+                    <NavLink onClick={handleCreate}><box-icon name='plus-circle' ></box-icon></NavLink>
+                    <NavLink onClick={handleProfile} to='/profile'><img className='profile-pic' src={loggedInUser.profilePicture}/></NavLink>
+                </div>
+                { moreOptions && 
+                (
+                    <div className='options-container'>
+                        <div className='option-item' onClick={handleSettings}>
+                            <span className='settings-icon'><box-icon name='cog'></box-icon></span>
+                            <span className='settings-text'>Settings</span>
+                        </div>
+                        <div className='option-item' onClick={handleLogout}>
+                            <span className='logout-text'>Log out</span>
+                        </div>
+                    </div>
+                ) 
+                }
+                <div className='more-options' onClick={handleMoreOptions}>
+                {
+                    (<div className='breadcrumb'>
+                        <div className='line'></div>
+                        <div className='line'></div>
+                        <div className='line'></div>
+                    </div>) 
+                    }
+                    
+                    
+                </div>
+            </div> 
+            
+            :
+        
             <div className='navbar-containers'>
                 <img className={`logo ${change ? 'change':''}`} src={change?require("../../images/favicon.png"):require("../../images/logo.png")} alt='logo'/>
                 <div className='navlinks'>
                     <NavLink onClick={handleHome} to='/homepage'>{change ?<box-icon type='solid' name='home'></box-icon> : <span style={{display: "flex"}}><box-icon  type='solid' name='home'></box-icon> <span style={{marginTop: "5px", marginLeft: "15px"}}>Home</span></span>}</NavLink>
                     <NavLink onClick={handleSearchContainer}>{change ?<span style={{display: "flex"}}><box-icon size="md" border="square" color="grey" name='search' ></box-icon></span> : <span style={{display: "flex"}}><box-icon name='search' ></box-icon> <span style={{marginTop: "5px", marginLeft: "15px"}}>Search</span></span>}</NavLink>
-                    <NavLink onClick={handleExplore} to='/explore' >{change ?<box-icon name='compass' ></box-icon> : <span style={{display: "flex"}}><box-icon  name='compass' ></box-icon> <span style={{marginTop: "5px", marginLeft: "15px"}}>Explore</span></span>}</NavLink>
+                    {/* <NavLink onClick={handleExplore} to='/explore' >{change ?<box-icon name='compass' ></box-icon> : <span style={{display: "flex"}}><box-icon  name='compass' ></box-icon> <span style={{marginTop: "5px", marginLeft: "15px"}}>Explore</span></span>}</NavLink> */}
                     {/* <NavLink onClick={handleMessages} to='/messages'>{change ?<box-icon name='message-rounded-detail' ></box-icon> : <span style={{display: "flex"}}><box-icon name='message-rounded-detail' ></box-icon> <span style={{marginTop: "5px", marginLeft: "15px"}}>Messages</span></span>}</NavLink> will be updated soon */}
-                    <NavLink onClick={handleNotifications} to='/notifications'>{change ?<box-icon name='bell' ></box-icon> : <span style={{display: "flex"}}><box-icon name='bell' ></box-icon> <span style={{marginTop: "5px", marginLeft: "15px"}}>Notifications</span></span>}</NavLink>
+                    {/* <NavLink onClick={handleNotifications} to='/notifications'>{change ?<box-icon name='bell' ></box-icon> : <span style={{display: "flex"}}><box-icon name='bell' ></box-icon> <span style={{marginTop: "5px", marginLeft: "15px"}}>Notifications</span></span>}</NavLink> */}
                     <NavLink onClick={handleCreate}>{change ?<box-icon name='plus-circle' ></box-icon> : <span style={{display: "flex"}}><box-icon name='plus-circle' ></box-icon> <span style={{marginTop: "5px", marginLeft: "15px"}}>Create</span></span>}</NavLink>
-                    <NavLink onClick={handleProfile} to='/profile'>{change ?<img className='profile-pic' src={require("../../images/defaultProfilePicture.png")}/>: <span style={{display: "flex"}}><img className='profile-pic' src={require("../../images/defaultProfilePicture.png")}/> <span style={{marginTop: "5px", marginLeft: "15px"}}>Profile</span></span>}</NavLink>
+                    <NavLink onClick={handleProfile} to='/profile'>{change ?<img className='profile-pic' src={loggedInUser.profilePicture}/>: <span style={{display: "flex"}}><img className='profile-pic' src={loggedInUser.profilePicture}/> <span style={{marginTop: "5px", marginLeft: "15px"}}>Profile</span></span>}</NavLink>
                 </div>
                 { moreOptions && 
                 (
@@ -152,6 +210,7 @@ const Navbar = () => {
                     
                 </div>
             </div>
+            }
             <SearchContainer visibility={searchContainerVisibility} setVisibility={handleSearchContainer}/>
             {showCreateVisibility && <CreatePost show={showCreateVisibility} setShow={setShowCreateVisibility}/>}
             

@@ -60,8 +60,8 @@
 .profile-pic{
     width: 22px;
     height: 22px;
-    border: 1px solid rgb(0, 0, 0);
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .more-options{
@@ -158,3 +158,122 @@
     margin-left: 20px;
 }
 
+
+@media screen and (max-width: 1095px){
+
+   .navbar{
+        width: 100px;
+    }
+
+   .navbar-containers{
+        width: 100px !important;
+    }
+
+    .navlinks a {
+       width: 50px;
+    }
+
+}
+
+@media screen and (max-width: 780px){
+
+    .navbar-containers {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .navlinks {
+        display: flex;
+        flex-direction: row;
+        height: fit-content;
+        margin: 0;
+        padding: 0;
+        gap: 0;
+    }
+
+    .navlinks a {
+        width: 17vw;
+    }
+
+    .navbar {
+        width: 101vw;
+        height: 53px;
+        background: white;
+        z-index: 100;
+        position: fixed;
+        bottom: 0%;
+        border-top: 1px solid rgba(128, 128, 128, 0.644);
+    }
+
+    .profile-page {
+        display: flex;
+        position: static;
+        left: 0;
+        height: 100vh !important;
+        width: 100%;
+        align-content: center;
+        justify-content: center;
+        overflow-y: scroll;
+    }
+
+    .logo.change {
+        display: none;
+    }
+
+    .navbar .search-container {
+        border-left: none;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        background-color: white;
+        margin-left: 0;
+        top: -27rem;
+        width: 1rem;
+        border-top: none;
+        border-bottom: none;
+        height: 100vh;
+        z-index: 10;
+        opacity: 0;
+        overflow: hidden;
+        transition: opacity 0.5s ease, width 0.5s ease;
+    }
+
+    .navbar .search-container.visible {
+        opacity: 1;
+        width: 100vw;
+        z-index: 10;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        top: -99vh;
+        left: -25.5vw;
+    }
+
+    .more-options {
+        margin-left: 13vw;
+    }
+
+    .more-options .breadcrumb {
+        width: 25px;
+        height: 28px;
+    }
+
+    .profile {
+        height: 100vh;
+    }
+
+    .options-container {
+        left: 24%;
+        top: -242%;
+    }
+
+    .search h2 {
+        margin-left: 28px !important;
+        margin-top: 20px !important;
+    }
+
+    .search input {
+        width: 89vw !important;
+        margin-top: 50px;
+        margin-left: 5vw;
+        height: 45px;
+    }
+}

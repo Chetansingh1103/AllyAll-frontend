@@ -130,6 +130,25 @@
 }
 
 
+@media screen and (max-width: 1250px) {
 
+    .suggestions{
+        display: none;
+    }
+  
+}
 
+@media screen and (max-width: 785px){
 
+    .homepage {
+        position: static;
+        left: 0;
+        width: 100vw;
+    }
+
+    .post-img {
+        width: 86vw;
+        height: 91vw;
+    }
+
+}

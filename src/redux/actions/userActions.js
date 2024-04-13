@@ -263,7 +263,6 @@ export const getAllUsers = (token) => {
 }
 
 // get searched users
-
 export const getSearchedUsers = (searchedUsername,token) => {
     return async (dispatch) => {
         dispatch(getSearchedUsersRequest())
@@ -319,13 +318,14 @@ export const updateUserDetails = (userDetails,token) => {
         dispatch(updateUserDetailsRequest())
         
         try{
-            const response = await axios.put(`${API_URL}/user/update-user-details`, userDetails, {
+            const response = await axios.put(`${API_URL}/user/update-user`, userDetails, {
                 headers: {
                     "xs-my-app": token
                 }
             })
 
             if(response.data.status === 200){
+                window.location.reload()
                 dispatch(updateUserDetailsSuccess(true))
             }
 
@@ -435,7 +435,6 @@ export const getPreviouslyClickedUserId = (token) => {
 }
 
 // follow user
-
 export const followUser = (userId,token) => {
     return async (dispatch) => {
         dispatch(followUserRequest())
@@ -461,7 +460,6 @@ export const followUser = (userId,token) => {
 }
 
 // unfollow user
-
 export const unfollowUser = (userId,token) => {
     return async (dispatch) => {
         dispatch(unfollowUserRequest())
